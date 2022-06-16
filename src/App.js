@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+export const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={isOpen ? 'dropdown active' : 'dropdown'} onClick={() => setIsOpen(!isOpen)}>
+      <div className="dropdown__text">Click me</div>
+      <div className="dropdown__items">
+        <div className="dropdown__item">item</div>
+        <div className="dropdown__item">item</div>
+        <div className="dropdown__item">item</div>
+        <div className="dropdown__item">item</div>
+        <div className="dropdown__item">item</div>
+        <div className="dropdown__item">
+          <button>Connect</button>
+        </div>
+
+      </div>
     </div>
   );
-}
+};
 
 export default App;
